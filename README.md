@@ -1,6 +1,8 @@
 # Network operation center (NOC)
 
-This console application simulates a network operation center. It is implemented in Node.js with Typescript and it follows Clean Architecture principles for modularity and scalability.
+This console application simulates a network operation center.
+
+It is implemented in Node.js with Typescript and it follows Clean Architecture principles for modularity and scalability.
 
 ## Requirements
 
