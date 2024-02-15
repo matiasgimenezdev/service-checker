@@ -1,1 +1,9 @@
-console.log('Hello world!');
+import { Server } from './presentation/server';
+
+function main() {
+	Server.start();
+}
+
+(async () => {
+	main();
+})();
