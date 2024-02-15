@@ -4,9 +4,9 @@ This console application simulates a network operation center. It is implemented
 
 ## Requirements
 
--   node.js
--   npm
--   docker and docker compose
+-   Node.js (v18.17.1 or higher)
+-   NPM (v10.3 or higher)
+-   Docker + Docker Compose
 
 ## Installation
 
