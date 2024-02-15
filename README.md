@@ -1,4 +1,4 @@
-# Network operation center (NOC)
+# NOC - Network Operation Center
 
 This console application simulates a network operation center.
 
