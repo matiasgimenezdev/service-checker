@@ -1,4 +1,4 @@
-import { CronService } from './cron/cron-service';
+import { CronService } from './cron/cronService';
 
 export class Server {
 	public static start() {
