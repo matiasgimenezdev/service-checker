@@ -1,4 +1,4 @@
-import { LogEntity, LogSeverityLevel } from '../entities/logEntity';
+import { LogEntity, LogSeverityLevel } from '../../domain/entities/logEntity';
 
 export abstract class LogDatasource {
 	abstract saveLog(log: LogEntity): Promise<void>;
