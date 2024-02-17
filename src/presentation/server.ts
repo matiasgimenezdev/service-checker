@@ -1,5 +1,5 @@
-import { CheckService } from '../domain/usecases/checks/checkService';
-import { CronService } from './cron/cronService';
+import { CheckService } from '../domain/usecases/checks/check-service';
+import { CronService } from './cron/cron-service';
 
 export class Server {
 	public static start() {
