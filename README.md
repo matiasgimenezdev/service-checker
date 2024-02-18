@@ -24,7 +24,14 @@ git clone https://github.com/matiasgimenezdev/network-operation-center
 npm install
 ```
 
-3. Set up the environment variables
+3. Set up the environment variables on .env (see .env.example)
+
+```
+MAILER_EMAIL =
+MAILER_SECRET_KEY =
+
+PRODUCTION = false
+```
 
 4. Run the application
 
