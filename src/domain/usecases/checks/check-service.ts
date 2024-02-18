@@ -5,8 +5,8 @@ interface CheckServiceUseCase {
 	execute(url: string): Promise<boolean>;
 }
 
-type SuccessCallback = () => void;
-type ErrorCallback = (error: string) => void;
+type SuccessCallback = (() => void) | undefined;
+type ErrorCallback = ((error: string) => void) | undefined;
 
 export class CheckService implements CheckServiceUseCase {
 	private logRepository: LogRepository;
@@ -14,14 +14,13 @@ export class CheckService implements CheckServiceUseCase {
 	private errorCallback: ErrorCallback;
 
 	constructor(
-		successCallback: SuccessCallback,
-		errorCallback: ErrorCallback,
-		logRepository: LogRepository
+		logRepository: LogRepository,
+		successCallback?: SuccessCallback,
+		errorCallback?: ErrorCallback
 	) {
+		this.logRepository = logRepository;
 		this.errorCallback = errorCallback;
 		this.successCallback = successCallback;
-
-		this.logRepository = logRepository;
 	}
 
 	public async execute(url: string): Promise<boolean> {
@@ -36,7 +35,7 @@ export class CheckService implements CheckServiceUseCase {
 				LogSeverityLevel.low
 			);
 			this.logRepository.saveLog(log);
-			this.successCallback();
+			this.successCallback && this.successCallback();
 
 			return true;
 		} catch (error) {
@@ -44,7 +43,7 @@ export class CheckService implements CheckServiceUseCase {
 
 			const log = new LogEntity(errorMessage, LogSeverityLevel.high);
 			this.logRepository.saveLog(log);
-			this.errorCallback(errorMessage);
+			this.errorCallback && this.errorCallback(errorMessage);
 
 			return false;
 		}
