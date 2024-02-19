@@ -5,11 +5,11 @@ function main() {
 	Server.start();
 
 	const { MAILER_EMAIL, MAILER_SECRET_KEY, PRODUCTION } = env;
-	console.log({
-		MAILER_EMAIL,
-		MAILER_SECRET_KEY,
-		PRODUCTION,
-	});
+	// console.log({
+	// 	MAILER_EMAIL,
+	// 	MAILER_SECRET_KEY,
+	// 	PRODUCTION,
+	// });
 }
 
 (async () => {
