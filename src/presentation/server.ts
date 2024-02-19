@@ -11,12 +11,12 @@ export class Server {
 	public static start() {
 		CronService.createJob('*/5 * * * * *', () => {
 			const url = 'https://google.com';
-
 			new CheckService(
 				fileSystemLogRepository,
 				() => console.log(`Service ${url} is up!`),
 				(error) => console.log(error)
 			).execute(url);
 		});
+		// TODO: Send email
 	}
 }
