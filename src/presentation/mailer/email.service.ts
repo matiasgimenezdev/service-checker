@@ -17,11 +17,8 @@ interface Attachment {
 
 export class EmailService {
 	private transporter: Transporter;
-	private logRepository: LogRepository;
 
-	constructor(logRepository: LogRepository) {
-		this.logRepository = logRepository;
-
+	constructor() {
 		this.transporter = nodemailer.createTransport({
 			service: env.MAILER_SERVICE,
 			auth: {
@@ -41,22 +38,8 @@ export class EmailService {
 				attachments,
 			});
 
-			const log = new LogEntity({
-				level: LogSeverityLevel.low,
-				message: 'Email sent',
-				origin: 'email.service.ts',
-			});
-			this.logRepository.saveLog(log);
-
 			return true;
 		} catch (error) {
-			const log = new LogEntity({
-				level: LogSeverityLevel.high,
-				message: `Error sending email: ${error}`,
-				origin: 'email.service.ts',
-			});
-			this.logRepository.saveLog(log);
-
 			return false;
 		}
 	}
