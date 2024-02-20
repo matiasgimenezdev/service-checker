@@ -1,5 +1,5 @@
 import { CheckService } from '../domain/usecases/checks/check-service';
-import { FileSystemDatasource } from '../infrastructure/datasources/file-system.datasource.';
+import { FileSystemDatasource } from '../infrastructure/datasources/file-system.datasource';
 import { LogRepository } from '../infrastructure/repositories/log.repository';
 import { CronService } from './cron/cron-service';
 
