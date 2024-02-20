@@ -18,8 +18,10 @@
 		"typescript": "^5.3.3"
 	},
 	"dependencies": {
+		"@types/nodemailer": "^6.4.14",
 		"cron": "^3.1.6",
 		"dotenv": "^16.4.4",
-		"env-var": "^7.4.1"
+		"env-var": "^7.4.1",
+		"nodemailer": "^6.9.9"
 	}
 }
