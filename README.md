@@ -1,6 +1,6 @@
 # Service checker
 
-This console application checks the status of a given service and logs the results.
+This console application checks the status of a given service and logs the results on the file system and databases (MongoDB & Postgres).
 
 It is implemented in Node.js with Typescript and follows Clean Architecture principles for modularity and scalability.
 
@@ -15,7 +15,7 @@ It is implemented in Node.js with Typescript and follows Clean Architecture prin
 1. Clone the repository
 
 ```bash
-git clone https://github.com/matiasgimenezdev/network-operation-center
+git clone https://github.com/matiasgimenezdev/service-checker
 ```
 
 2. Install dependencies
