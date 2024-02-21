@@ -26,6 +26,7 @@ export class LogEntity {
 	}
 
 	public static fromJson(json: string): LogEntity {
+		json = json === '' ? '{}' : json;
 		const { message, level, createdAt, origin } = JSON.parse(json);
 
 		if (!message) throw new Error('Log message is required');
