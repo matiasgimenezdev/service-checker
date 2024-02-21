@@ -1,8 +1,8 @@
-# NOC - Network Operation Center
+# Service checker
 
-This console application simulates a network operation center.
+This console application checks the status of a given service and logs the results.
 
-It is implemented in Node.js with Typescript and it follows Clean Architecture principles for modularity and scalability.
+It is implemented in Node.js with Typescript and follows Clean Architecture principles for modularity and scalability.
 
 ## Requirements
 
