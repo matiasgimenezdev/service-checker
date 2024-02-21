@@ -27,8 +27,13 @@ npm install
 3. Set up the environment variables on .env (see .env.example)
 
 ```
+# Your email
 MAILER_EMAIL =
+#Generate this key using in your gmail account: https://myaccount.google.com/u/0/apppasswords
 MAILER_SECRET_KEY =
+MAILER_SERVICE = gmail
+
+PRODUCTION = false
 
 PRODUCTION = false
 ```
