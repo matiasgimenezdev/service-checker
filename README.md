@@ -1,6 +1,6 @@
 # Service checker
 
-This console application checks the status of a given service and logs the results on the file system and databases (MongoDB & Postgres).
+This console application checks the status of a given service and logs the results on the file system and different databases (MongoDB & Postgres).
 
 It is implemented in Node.js with Typescript and follows Clean Architecture principles for modularity and scalability.
 
