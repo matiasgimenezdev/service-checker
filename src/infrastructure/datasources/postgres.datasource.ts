@@ -9,8 +9,6 @@ export class PostgresDatasource implements LogDatasource {
 		const newLog = await prisma.logModel.create({
 			data: log,
 		});
-
-		console.log(newLog);
 	}
 
 	public async getLog(severityLevel: LogSeverityLevel): Promise<LogEntity[]> {
