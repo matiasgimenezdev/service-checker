@@ -5,21 +5,26 @@ import { EmailService } from './mailer/email.service';
 import { LogRepository } from '../infrastructure/repositories/log.repository';
 import { SendLogsEmail } from '../domain/usecases/email/send-logs-email';
 import { MongoDatasource } from '../infrastructure/datasources/mongo.datasource';
-import { LogSeverityLevel } from '../domain/entities/log.entity';
 import { PostgresDatasource } from '../infrastructure/datasources/postgres.datasource';
+import { CheckServiceMultiple } from '../domain/usecases/checks/check-service-multiple';
 
-// Instanciate the dependencies
 const mongoDatasource = new MongoDatasource();
 const fileSystemDatasource = new FileSystemDatasource();
 const postgresDatasource = new PostgresDatasource();
-const logRepository = new LogRepository(postgresDatasource);
+const fileSystemLogRepository = new LogRepository(fileSystemDatasource);
+const mongoLogRepository = new LogRepository(mongoDatasource);
+const postgresLogRepository = new LogRepository(postgresDatasource);
 
 export class Server {
 	public static async start() {
 		CronService.createJob('*/5 * * * * *', () => {
 			const url = 'https://google.com';
-			new CheckService(
-				logRepository,
+			new CheckServiceMultiple(
+				[
+					fileSystemLogRepository,
+					mongoLogRepository,
+					postgresLogRepository,
+				],
 				() => console.log(`Service ${url} is up!`),
 				(error) => console.log(error)
 			).execute(url);
