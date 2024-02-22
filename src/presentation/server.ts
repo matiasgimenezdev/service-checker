@@ -6,11 +6,13 @@ import { LogRepository } from '../infrastructure/repositories/log.repository';
 import { SendLogsEmail } from '../domain/usecases/email/send-logs-email';
 import { MongoDatasource } from '../infrastructure/datasources/mongo.datasource';
 import { LogSeverityLevel } from '../domain/entities/log.entity';
+import { PostgresDatasource } from '../infrastructure/datasources/postgres.datasource';
 
 // Instanciate the dependencies
 const mongoDatasource = new MongoDatasource();
 const fileSystemDatasource = new FileSystemDatasource();
-const logRepository = new LogRepository(mongoDatasource);
+const postgresDatasource = new PostgresDatasource();
+const logRepository = new LogRepository(postgresDatasource);
 
 export class Server {
 	public static async start() {
