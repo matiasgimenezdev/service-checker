@@ -52,7 +52,13 @@ POSTGRES_PASSWORD =
 docker compose up -d
 ```
 
-5.  Run the application
+5.  Create the postgres database
+
+```bash
+npx prisma migrate dev
+```
+
+6.  Run the application
 
 ```bash
 npm run dev
