@@ -4,6 +4,8 @@ dist
 logs
 
 .env
+.env.test
+docker-compose.test.yml
 /mongo
 /postgres
 coverage
