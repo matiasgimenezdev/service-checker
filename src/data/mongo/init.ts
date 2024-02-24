@@ -10,9 +10,8 @@ export class MongoDatabase {
 		const { mongoURL, dbName } = connectionOptions;
 		try {
 			await mongoose.connect(mongoURL, { dbName });
-			console.log('Mongo connection successful!');
+			return true;
 		} catch (error) {
-			console.log('Mongo connection failed...');
 			throw error;
 		}
 	}
