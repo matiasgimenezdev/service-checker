@@ -6,7 +6,7 @@ import {
 
 describe('Testing log.repository.ts', () => {
 	const newLog = new LogEntity({
-		origin: 'log.datasource.test.ts',
+		origin: 'log.repository.test.ts',
 		message: 'test-message',
 		level: LogSeverityLevel.low,
 	});
