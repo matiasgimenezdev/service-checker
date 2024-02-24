@@ -8,4 +8,6 @@ logs
 docker-compose.test.yml
 /mongo
 /postgres
+/mongo-test
+/postgres-test
 coverage
