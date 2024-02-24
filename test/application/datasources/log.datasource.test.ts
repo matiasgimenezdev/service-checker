@@ -22,14 +22,14 @@ describe('Testing log.datasource.ts', () => {
 	}
 
 	test('should test the abstract class', async () => {
+		// Here we test that the class implements the methods
 		const logDatasourceMock = new LogDatasourceMock();
-
 		expect(logDatasourceMock).toBeInstanceOf(LogDatasourceMock);
 		expect(typeof logDatasourceMock.saveLog).toBe('function');
 		expect(typeof logDatasourceMock.getLog).toBe('function');
 
+		// Here we test the methods parameters and return types. In other words, we test the contract of the class
 		await logDatasourceMock.saveLog(newLog);
-
 		const logs = await logDatasourceMock.getLog(LogSeverityLevel.low);
 		expect(logs).toHaveLength(1);
 		expect(logs[0]).toBeInstanceOf(LogEntity);
