@@ -16,6 +16,10 @@ describe('Testing log.repository.ts', () => {
 		origin: 'test',
 	});
 
+	beforeEach(() => {
+		jest.clearAllMocks();
+	});
+
 	test('saveLog() should call the datasource', async () => {
 		const logRepository = new LogRepository(mockLogDatasource);
 		logRepository.saveLog(log);
