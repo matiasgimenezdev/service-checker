@@ -22,7 +22,7 @@ describe('Testing log.repository.ts', () => {
 
 	test('saveLog() should call the datasource', async () => {
 		const logRepository = new LogRepository(mockLogDatasource);
-		logRepository.saveLog(log);
+		await logRepository.saveLog(log);
 
 		expect(mockLogDatasource.saveLog).toHaveBeenCalledTimes(1);
 		expect(mockLogDatasource.saveLog).toHaveBeenCalledWith({
@@ -33,7 +33,7 @@ describe('Testing log.repository.ts', () => {
 
 	test('getLog() should call the datasource', async () => {
 		const logRepository = new LogRepository(mockLogDatasource);
-		logRepository.getLog(LogSeverityLevel.low);
+		await logRepository.getLog(LogSeverityLevel.low);
 
 		expect(mockLogDatasource.getLog).toHaveBeenCalledTimes(1);
 		expect(mockLogDatasource.getLog).toHaveBeenCalledWith(
