@@ -1,14 +1,14 @@
 import nodemailer, { Transporter } from 'nodemailer';
 import { envs as env } from '../../config/plugins/env.plugin';
 
-interface sendEmailOptions {
+export interface sendEmailOptions {
 	to: string | string[];
 	subject: string;
 	htmlBody: string;
 	attachments?: Attachment[];
 }
 
-interface Attachment {
+export interface Attachment {
 	filename: string;
 	path: string;
 }
